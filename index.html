@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img class="logo-image" src="images/logo.jpg"   alt="GoTravel">
+            <span>GoTravel</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Book</a></li>
+                <li><a href="#">Packages</a>
+                    <ul>
+                        <li><a href="#">United States</a></li>
+                        <li><a href="#">India</a></li>
+                        <li><a href="#">France</a></li>
+                        <li><a href="#">Germany</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <div>
+            <button onclick="window.location.href = 'login.html';">Login</button>
+            
+            <button onclick="window.location.href = 'register.html';">Register</button>
+        </div>
+    </header>
+
+    
+
+    <div class="background-image">
+        <h1>Welcome to GoTravel</h1>
+        <h2>Visit <span id="placeName">India</span></h2>
+        <button>Book Now</button>
+    </div>
+
+    
+    <br> <br> <br> <br> <br> <br>  
+    
+    <div class="row">
+        <div class="column">
+            <img src="images/logo.jpg" alt="GoTravel" style="width: 100%;">
+            <h1 style="text-align: center;">GoTravel</h1>
+        </div>
+
+        <div class="column form-section">
+            <form id="bookingForm">
+                <label for="whereTo">Where to:</label>
+                <select id="whereTo" name="whereTo">
+
+
+                    <option value="sample1">Ayodhya, Uttar Pradesh</option>
+                    <option value="sample1">Jaipur, Rajasthan</option>
+                    <option value="sample1">Paris, France</option>
+                    <option value="sample2">New York City, USA</option>
+                    <option value="sample3">Tokyo, Japan</option>
+                    <option value="sample2">Rome, Italy</option>
+                    <option value="sample3">Sydney, Australia</option>
+                </select>
+
+                <label for="numberOfPersons">How Many Persons:</label>
+                <input type="number" id="numberOfPersons" name="numberOfPersons" min="1" required>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" min="2022-02-06" required>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" min="2022-02-07" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" minlength="50" maxlength="500"
+                    oninput="updateCounter()" required></textarea>
+                <p id="counter">Characters remaining: 500</p>
+
+
+
+                <button type="button" onclick="bookNow()">Book Now</button>
+            </form>
+        </div>
+    </div>
+
+
+   
+  
+  
+
+    <!-- Package Section -->
+    <div class="package-section">
+       
+        <h2>Package Gallery</h2>
+
+
+
+        <div class="row">
+            <div class="column package-card">
+                <img src="images/efiiel.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Paris Escape</h3>
+                <p>Explore the romantic streets of Paris, France, with this enchanting package. Discover the iconic
+                    Eiffel Tower, indulge in exquisite cuisine, and wander through the world-renowned Louvre Museum.</p>
+
+                <p>
+                <div class="star-container" data-rating="4"></div>
+                </p>
+                <p>Price: $2,500</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+            <div class="column package-card">
+                <img src="images/santorini.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Serenity in Santorini</h3>
+                <p>Experience the charm of Santorini, Greece, with breathtaking sunsets and white-washed buildings
+                    against the blue sea. Relax on beautiful beaches and immerse yourself in the tranquility of this
+                    picturesque island.
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $3,000</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+
+
+
+            <div class="column package-card">
+                <img src="images/kioto.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Cultural Delights in Kyoto</h3>
+                <p>Immerse yourself in the rich history of Kyoto, Japan. Explore ancient temples, stroll through
+                    traditional tea gardens, and witness the beauty of cherry blossoms in season..</p>
+
+                <p>
+                <div class="star-container" data-rating="4"></div>
+                </p>
+                <p>Price: $2,800</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="column package-card">
+                <img src="images/machu.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Marvels of Machu Picchu</h3>
+                <p>Embark on a journey to Machu Picchu, Peru, and explore the Inca ruins nestled in the Andes. Hike
+                    scenic trails, witness the Great Migration, and soak in the mystical atmosphere of this UNESCO World
+                    Heritage Site..</p>
+
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $3,500</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/marrakech.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Enchanting Marrakech</h3>
+                <p>Experience the vibrant colors and flavors of Marrakech, Morocco. Lose yourself in the bustling souks,
+                    visit historic palaces, and savor authentic Moroccan cuisine.</p>
+
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $2,200</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/safari.jpeg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Safari Adventure in Serengeti</h3>
+                <p>Witness the wonders of the Serengeti National Park, Tanzania. Go on thrilling safaris, witness the
+                    Great Migration, and connect with the diverse wildlife of East Africa.</p>
+
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $500</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="column package-card">
+                <img src="images/rome.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Historical Rome</h3>
+                <p>Dive into the history of Rome, Italy. Explore the ancient Colosseum, marvel at the artistry of the
+                    Vatican City, and toss a coin in the Trevi Fountain for good luck.</p>
+
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $2,600</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/goa.jpg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Tropical Goa Retreat</h3>
+                <p>Relax on the beaches of Goa, India. Enjoy the laid-back atmosphere, indulge in water sports, and
+                    explore the unique blend of Indian and Portuguese cultures.
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $1,000</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/varanasi.jpeg" alt="Package 1 Image" style="width: 100%;">
+                <h3>Spiritual Varanasi</h3>
+                <p>Experience the spiritual charm of Varanasi, India. Witness the Ganga Aarti, explore ancient temples,
+                    and cruise along the sacred Ganges River.</p>
+
+                <p>
+                <div class="star-container" data-rating="5"></div>
+                </p>
+                <p>Price: $500</p>
+
+                <button onclick="bookPackage(1)">Book Now</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="package-section">
+        <h2>Services</h2>
+
+
+
+        <div class="row">
+
+
+            <div class="column service-card">
+                <img src="images/food.webp" alt="Food & Drinks Packages" style="width: 100%; height: 100%;">
+                <h5 style="text-align: center;">Food & Drinks Packages</h5>
+
+            </div>
+
+            <div class="column service-card">
+                <img src="images/yakshagana.jpg" alt="Cultural Immersion Programs" style="width: 100%; height: 100%;">
+                <h5 style="text-align: center;">Cultural Immersion Programs</h5>
+
+            </div>
+
+            <div class="column service-card">
+                <img src="images/guide.jpg" alt="Guided Tours" style="width: 100%; height: 100%;">
+                <h5 style="text-align: center;">Guided Tours</h5>
+
+            </div>
+
+
+
+            <div class="column service-card">
+                <img src="images/insurance.jpeg" alt="Safety Guides and Travel Insurance" style="width: 100%; height: 100%;">
+                <h5 style="text-align: center;">Safety Guides and Travel Insurance</h5>
+
+            </div>
+
+            <div class="column service-card">
+                <img src="images/hotel.jpg" alt="Affordable Hotel Options"style="width: 100%; height: 100%;">
+                <h5 style="text-align: center;">Affordable Hotel Options</h5>
+
+            </div>
+
+            <div class="column service-card">
+                <img src="images/customer.png" alt="24/7 Customer Support" style="width: 100%; height: 100%;">
+                <h5 style="text-align: center;">24/7 Customer Support</h5>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <!-- Gallery Section -->
+
+    <div class="package-section">
+        <h2>Photo Gallery</h2>
+
+
+
+        <div class="row">
+            <div class="column package-card">
+                <img src="images/experience/10.jpg" alt="Experience" style="width: 100%; height: 250px;">
+            </div>
+
+            <div class="column package-card">
+                <img src="images/experience/2.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+
+
+
+            <div class="column package-card">
+                <img src="images/experience/3.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="column package-card">
+                <img src="images/experience/4.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/experience/5.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/experience/11.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="column package-card">
+                <img src="images/experience/12.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/experience/8.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+
+
+            <div class="column package-card">
+                <img src="images/experience/9.jpg" alt="Experience 1 Image" style="width: 100%; height: 250px;">
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- About Us Section -->
+    <div class="package-section">
+
+        <div class="about-info">
+          
+            <h2>About Us</h2>
+
+
+            <div class="row-center">
+                <div class="element">
+                 <div class="row-center" style="align-content: center;">
+                    <div class="about-image">
+                    
+                        <img src="images/logo.jpg" alt="Company Logo" style="width: 200px; height: 200px;">
+                    </div>
+                    <h1>GoTravel    </h1>
+                 </div>
+                </div>
+
+
+
+                <div class="element">
+                    <div class="company-info" style="text-align: start;">
+                      
+                        <p>Welcome to GoTravel, your premier travel partner for extraordinary adventures worldwide.</p>
+                        <p>Founded in 2020, GoTravel has been dedicated to crafting unparalleled travel experiences that go beyond the ordinary. Our commitment to excellence has made us a trusted name in the travel industry.</p>
+                        <p>At GoTravel, we believe in turning every journey into a memorable story. Our expert team is passionate about creating tailor-made itineraries, ensuring each trip is a unique reflection of your preferences and interests.</p>
+                        <p>Embark on a journey with GoTravel, where every destination becomes a discovery and every moment is an opportunity to create lifelong memories.</p>
+                   
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>GoTravel &copy; 2024. All Rights Reserved.</p>
+     
+        <a href="#" target="_blank"><img src="images/Instagram_icon.png" alt="Instagram" height="40px" width="40px"></a>
+        <a href="#" target="_blank"><img src="images/facebook_icon.png" alt="Facebook" height="40px" width="40px"></a>
+        <a href="#" target="_blank"><img src="images/twitter_icon.png" alt="Twitter" height="40px" width="40px"></a>
+        <a href="#" target="_blank"><img src="images/linkedin_icon.png" alt="LinkedIn" height="40px" width="40px"></a>
+        <a href="#" target="_blank"><img src="images/pinterest_icon.png" alt="Pinterest" height="40px" width="40px"></a>
+     
+    </footer>
+    
+</body>
+
+</html>
