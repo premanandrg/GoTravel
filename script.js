@@ -70,3 +70,18 @@ window.onload = function () {
 }
 
 
+
+
+function validateForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var defaultEmail = "info@gotravel.com";
+    var defaultPassword = "Password";
+
+    if (email === defaultEmail && password === defaultPassword) {
+        return true; // Proceed with form submission
+    } else {
+        alert("Incorrect email or password. Please try again.");
+        return false; // Prevent form submission
+    }
+}
